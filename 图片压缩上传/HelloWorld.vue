@@ -45,11 +45,13 @@ export default {
   },
   methods: {
     onChange (file) {
-      CompressPicture({blob: file.raw}, (data64, newBlob) => {
+      // this.isComplete = false
+      if (file.status !== 'ready') return
+      CompressPicture((data64, newBlob) => {
         this.imgSrc = data64
         this.blobInfo = newBlob
         this.isComplete = true
-      })
+      }, {blob: file.raw})
     },
     sumbit () {
       this.$refs.upload.submit()

@@ -1,15 +1,19 @@
 /**
  *
  * @param {blob,maxWidth,maxHeight}
+ * @callback 回掉函数，返回压缩后的图片base64和blob数据
+ *
  */
-let CompressPicture = function ({
+let CompressPicture = function (callback, {
   blob,
   maxWidth = 1024,
   maxHeight = 1024
-}, callback) {
-  if (!callback) return null
-  // 判断图片大小是否需要转化
-
+}) {
+  // 小于1M或者没写回掉函数
+  if (!callback || blob.size / 1024 < 1024) {
+    callback(null, blob)
+    return
+  }
   // 开始转化
   let canvas = document.createElement('canvas')
   let context = canvas.getContext('2d')
