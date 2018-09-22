@@ -1,15 +1,16 @@
 /**
  *
  * @param {blob,maxWidth,maxHeight}
- * @callback 回掉函数，返回压缩后的图片base64和blob数据
+ * @callback 回调函数，返回压缩后的图片
  *
  */
 let CompressPicture = function (callback, {
   blob,
+  fileName,
   maxWidth = 1024,
   maxHeight = 1024
 }) {
-  // 小于1M或者没写回掉函数
+  // 小于1M或者没写回调函数
   if (!callback || blob.size / 1024 < 1024) {
     callback(null, blob)
     return
@@ -40,9 +41,10 @@ let CompressPicture = function (callback, {
       context.clearRect(0, 0, targetWidth, targetHeight)
       // 重新画图
       context.drawImage(img, 0, 0, targetWidth, targetHeight)
-      let data64 = canvas.toDataURL('image/jpg')
-      let newBlob = dataURLtoBlob(data64)
-      callback(data64, newBlob)
+      let dataUrl = canvas.toDataURL('image/jpg')
+      //let newBlob = dataURLtoBlob(data64)
+      let file = dataURLtoFile(dataUrl,fileName)
+      callback(file)
     }
   }
 
@@ -59,6 +61,15 @@ let dataURLtoBlob = function (dataurl) {
     u8arr[n] = bstr.charCodeAt(n)
   }
   return new Blob([u8arr], {type: mime})
+}
+
+let dataURLtoFile = function (dataurl, filename) {
+  var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+      bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+  while(n--){
+      u8arr[n] = bstr.charCodeAt(n);
+  }
+  return new File([u8arr], filename, {type:mime});
 }
 
 export {CompressPicture}

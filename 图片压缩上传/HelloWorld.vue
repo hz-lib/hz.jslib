@@ -47,17 +47,18 @@ export default {
     onChange (file) {
       // this.isComplete = false
       if (file.status !== 'ready') return
-      CompressPicture((data64, newBlob) => {
+      CompressPicture(newFile => {
         this.imgSrc = data64
-        this.blobInfo = newBlob
+        //this.blobInfo = newBlob
+        file = newFile
         this.isComplete = true
-      }, {blob: file.raw})
+      }, {blob: file.raw, fileName: file.name})
     },
     sumbit () {
       this.$refs.upload.submit()
     },
     beforeUpload () {
-      return Promise.resolve(this.blobInfo)
+      //return Promise.resolve(this.blobInfo)
     }
   }
 }
