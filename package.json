@@ -1,0 +1,27 @@
+{
+  "name": "hzgodutils",
+  "version": "1.0.1",
+  "description": "hzgod Utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasewang987/jsLib.git"
+  },
+  "keywords": [
+    "hzgod",
+    "utils"
+  ],
+  "author": "hzgod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yasewang987/jsLib/issues"
+  },
+  "homepage": "https://github.com/yasewang987/jsLib#readme",
+  "devDependencies": {
+    "typescript": "^3.3.3333"
+  }
+}
