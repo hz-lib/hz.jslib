@@ -2,10 +2,11 @@
   "name": "hzgodutils",
   "version": "1.0.1",
   "description": "hzgod Utils",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "init": "./node_modules/.bin/tsc --init",
+    "build": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
   },
   "homepage": "https://github.com/yasewang987/jsLib#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "tslint": "^5.13.1",
+    "tslint-config-alloy": "^0.2.1",
     "typescript": "^3.3.3333"
   }
 }

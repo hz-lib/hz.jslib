@@ -1,2 +1,2 @@
-declare function hello(name: string): void;
+declare function hello(a: number, b: number): number;
 export { hello };

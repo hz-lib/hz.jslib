@@ -1,5 +1,5 @@
-function hello(name:string):void {
-    console.log(`hello ${name}`)
+function hello(a: number, b: number): number {
+    return a + b
 }
 
 export {hello}
