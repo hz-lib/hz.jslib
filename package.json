@@ -1,12 +1,13 @@
 {
-  "name": "hzgodutils",
+  "name": "@hzgod/utils",
   "version": "1.0.4",
   "description": "hzgod Utils",
   "main": "./dist/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",
     "init": "./node_modules/.bin/tsc --init",
-    "build": "./node_modules/.bin/tsc"
+    "build": "./node_modules/.bin/tsc",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",
