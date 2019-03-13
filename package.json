@@ -22,6 +22,8 @@
     "url": "https://github.com/yasewang987/jsLib/issues"
   },
   "homepage": "https://github.com/yasewang987/jsLib#readme",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.0.2",
