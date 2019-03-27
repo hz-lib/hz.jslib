@@ -1,6 +1,6 @@
 {
   "name": "@hzgod/utils",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "hzgod Utils",
   "main": "./dist/index.js",
   "scripts": {
