@@ -1,7 +1,7 @@
 import { speechText } from './lib/BaiduSpeech/index'
-import { hello } from './lib/JSTest/index'
+import Common from './lib/Common/index'
 
-export {
-    hello,
-    speechText
+export default {
+    speechText,
+    Common
 }

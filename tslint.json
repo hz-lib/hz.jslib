@@ -6,7 +6,8 @@
         "semicolon": [
             false,
             "always"
-         ]
+         ],
+         "space-within-parens": false
     },
     "rulesDirectory": []
 }
