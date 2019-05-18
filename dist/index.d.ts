@@ -3,6 +3,7 @@ declare const _default: {
     Common: {
         ConvertPinyin: typeof import("./lib/Common/pinyin").ConvertPinyin;
         isPhone: (phone: string) => boolean;
+        getNowDate: () => string;
     };
 };
 export default _default;
