@@ -27,7 +27,7 @@
   "typings": "./dist/index.d.ts",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.0.2",
+    "mocha": "^10.2.0",
     "tslint": "^5.13.1",
     "tslint-config-alloy": "^0.2.1",
     "typescript": "^3.3.3333"
